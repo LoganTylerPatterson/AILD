@@ -3,17 +3,18 @@ package com.runtimeterror.aild.db.entities
 import android.net.Uri
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.*
 
 @Entity(tableName = "alarm")
 data class Alarm(
-        @PrimaryKey(autoGenerate = true)
-        val id: Int,
-        var title: String,
-        var hour: Int,
-        var minute: Int,
-        var am: Boolean = true,
+        @PrimaryKey
+        var id: UUID = UUID.randomUUID(),
+        var title: String? = "My Alarm",
+        var hour: Int = 12,
+        var minute: Int = 12,
+        var dayHalf: String = "AM",
         var active: Boolean = true,
         var autoOff: Boolean = true,
         var repeat: Boolean = false,
-        var sound: Uri
+        var sound: String = "default"
 )

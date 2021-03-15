@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         //Sets up the top app bar and enables an upp arrow
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //Places the AlarmListFragment on top
         supportFragmentManager
