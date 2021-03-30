@@ -6,4 +6,6 @@
     <string name="pick_an_alarm_sound">Pick an alarm sound</string>
     <string name="save">Save</string>
     <string name="enter_alarm_title">Enter Alarm Title</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 </resources>

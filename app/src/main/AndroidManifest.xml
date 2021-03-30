@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.runtimeterror.aild">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".AILDApplication"
@@ -17,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RingActivity"/>
+        <service android:name=".service.AlarmService"/>
+        <service android:name=".service.RescheduleAlarmService"/>
+        <receiver android:name=".AlarmBroadCastReciever"
+            android:exported="true"
+            android:enabled="true"
+            android:directBootAware="true"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
-
 </manifest>

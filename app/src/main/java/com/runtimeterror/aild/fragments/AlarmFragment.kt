@@ -1,5 +1,9 @@
 package com.runtimeterror.aild.fragments
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -7,18 +11,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.runtimeterror.aild.*
 import com.runtimeterror.aild.databinding.FragmentAlarmBinding
 import com.runtimeterror.aild.db.entities.Alarm
 import com.runtimeterror.aild.viewmodels.AlarmViewModel
-import com.runtimeterror.aild.TimePickerUtil
-import com.runtimeterror.aild.replaceFragment
 import java.util.*
 
 
 private const val TAG = "AlarmFragment"
 private const val ARG_ALARM_ID = "alarm_id"
-
 
 class AlarmFragment : Fragment() {
 
@@ -61,15 +64,14 @@ class AlarmFragment : Fragment() {
         }
 
         binding.buttonDone.setOnClickListener {
+            //If replaceAlarm is true just update it in the db and set the alarm
             if (replaceAlarm) {
-                alarm.let { alarm -> alarmViewModel.saveAlarm(alarm) }
+                alarm.let { alarm -> alarmViewModel.updateAlarm(alarm) }
             } else {
-                var hour = 0
                 if (TimePickerUtil.getTimePickerHour(binding.timePicker) >= 12) {
-                    hour = TimePickerUtil.getTimePickerHour(binding.timePicker) - 12
                     alarm.dayHalf = "PM"
                 }
-                alarm.hour = hour
+                alarm.hour = TimePickerUtil.getTimePickerHour(binding.timePicker)
                 alarm.minute = TimePickerUtil.getTimePickerMinute(binding.timePicker)
                 alarmViewModel.insertAlarm(alarm)
             }
@@ -111,14 +113,39 @@ class AlarmFragment : Fragment() {
     }
 
     private fun setAlarm(alarm:Alarm){
-        //TODO create an alarm intent and wing this bitch
+        /**
+         * This creates and alarm with alarmManager and uses a pending intent to start the alarm
+         * using the alarm service from the android system
+         */
+        val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(context, AlarmBroadCastReciever::class.java)
 
+        intent.putExtra(RECURRING, false)
+        intent.putExtra(TITLE, alarm.title)
+        intent.putExtra(SOUND, alarm.sound)
+        //TODO You have the sounds in downloads :D
+
+        val alarmPendingIntent = PendingIntent.getBroadcast(context, REQUEST_CODE, intent, 0)
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.HOUR_OF_DAY, alarm.hour)
+        calendar.set(Calendar.MINUTE, alarm.minute)
+        calendar.set(Calendar.SECOND, 0)
+        calendar.set(Calendar.MILLISECOND, 0)
+
+        alarmManager.setExact(
+            AlarmManager.RTC_WAKEUP,
+            calendar.timeInMillis,
+            alarmPendingIntent
+        )
     }
+
     private fun updateUI() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             binding.timePicker.hour = alarm.hour
             binding.timePicker.minute = alarm.minute
         }
-        binding.buttonSound.text = alarm.sound
+        binding.buttonSound.text = when(alarm.sound){
+            //TODO when id = R.id.someSong do this
+        }
     }
 }

@@ -16,5 +16,5 @@ data class Alarm(
         var active: Boolean = true,
         var autoOff: Boolean = true,
         var repeat: Boolean = false,
-        var sound: String = "default"
+        var sound: Int = 0
 )

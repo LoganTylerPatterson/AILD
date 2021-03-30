@@ -3,6 +3,7 @@ package com.runtimeterror.aild.viewmodels
 import androidx.lifecycle.*
 import com.runtimeterror.aild.Repository
 import com.runtimeterror.aild.db.entities.Alarm
+import com.runtimeterror.aild.fragments.AlarmFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
@@ -26,9 +27,15 @@ class AlarmViewModel : ViewModel() {
         { alarmRepository.insertAlarm(alarm) }
     }
 
-    fun saveAlarm(alarm: Alarm) {
+    fun updateAlarm(alarm: Alarm) {
         viewModelScope.launch(Dispatchers.IO){
             alarmRepository.updateAlarm(alarm)
+        }
+    }
+
+    fun deleteAlarm(alarm: Alarm){
+        viewModelScope.launch(Dispatchers.IO) {
+            alarmRepository.deleteAlarm(alarm)
         }
     }
 

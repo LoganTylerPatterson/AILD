@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentManager
 /**This method is used to make other methods cleaner, all it does is replace the current fragment
  * ...with a destination fragment
  **/
-private val TAG = "UTIL"
+private val TAG = "Util"
 fun replaceFragment(fm: FragmentManager, frag: Fragment) {
     fm
         .beginTransaction()
@@ -21,7 +21,6 @@ fun replaceFragment(fm: FragmentManager, frag: Fragment) {
 
 fun getDateString(hour: Int? = 0, min: Int? = 0): String{
     val str = "${hour.toString()}:${min.toString()}"
-    Log.e(TAG, "Time is $str")
     return str
 }
 

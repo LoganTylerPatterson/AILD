@@ -2,10 +2,9 @@ package com.runtimeterror.aild.fragments
 
 import android.os.Bundle
 import android.text.SpannableStringBuilder
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
@@ -33,15 +32,28 @@ class AlarmListFragment : Fragment() {
     private var adapter: AlarmListAdapter = AlarmListAdapter(emptyList())
     private lateinit var viewModel: AlarmListViewModel
 
+    inner class AlarmViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val alarmTitle = view.findViewById<TextView>(R.id.text_view_title)
+        val timeTextView = view.findViewById<TextView>(R.id.time_text_view)
+        val deletCheckbox = view.findViewById<CheckBox>(R.id.check_delete)
+        val amTextView = view.findViewById<TextView>(R.id.am_text_view)
+        val textView = view.findViewById<TextView>(R.id.text_view_dismiss)
+        val activeSwitch: SwitchCompat = view.findViewById(R.id.switch_on)
+        val autoDismissCheckBox = view.findViewById<CheckBox>(R.id.checkbox_auto_off)
+        var id: UUID? = null
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)
             .get(AlarmListViewModel::class.java)
+        setHasOptionsMenu(true)
     }
 
+
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
 
         //Instantiate binding object and inflate layout
@@ -61,25 +73,27 @@ class AlarmListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        Log.d(TAG, "OnStart Called")
         viewModel.alarmListLiveData.observe(
-                viewLifecycleOwner,
-                { alarms ->
-                    alarms?.let {
-                        updateUI(alarms)
-                    }
+            viewLifecycleOwner,
+            { alarms ->
+                alarms?.let {
+                    updateUI(alarms)
                 }
+            }
         )
     }
 
     private fun updateUI(alarms: List<Alarm>) {
         adapter.let {
+            Log.d(TAG, "AlarmList is ${alarms.size}")
             it.alarmList = alarms
         }
         binding.rvAlarms.adapter = adapter
     }
 
     inner class AlarmListAdapter(var alarmList: List<Alarm>) :
-            RecyclerView.Adapter<AlarmViewHolder>() {
+        RecyclerView.Adapter<AlarmViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlarmViewHolder {
             val view = LayoutInflater.from(parent.context)
@@ -92,6 +106,10 @@ class AlarmListFragment : Fragment() {
         }
 
         override fun onBindViewHolder(holder: AlarmViewHolder, position: Int) {
+            bind(holder, position)
+        }
+
+        private fun bind(holder: AlarmViewHolder, position: Int) {
             holder.timeTextView.text = getDateString(
                 alarmList[position].hour,
                 alarmList[position].minute
@@ -103,24 +121,27 @@ class AlarmListFragment : Fragment() {
             holder.autoDismissCheckBox.isChecked = alarmList[position].autoOff
             holder.id = alarmList[position].id
 
-            holder.itemView.setOnClickListener{
+            holder.itemView.setOnClickListener {
                 val frag = AlarmFragment()
                 val args = Bundle()
                 args.putSerializable(ARG_ALARM_ID, holder.id)
                 frag.arguments = args
                 replaceFragment(parentFragmentManager, frag)
             }
+
         }
     }
 
-    inner class AlarmViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val alarmTitle = view.findViewById<TextView>(R.id.text_view_title)
-        val timeTextView = view.findViewById<TextView>(R.id.time_text_view)
-        val amTextView = view.findViewById<TextView>(R.id.am_text_view)
-        val textView = view.findViewById<TextView>(R.id.text_view_dismiss)
-        val activeSwitch: SwitchCompat = view.findViewById(R.id.switch_on)
-        val autoDismissCheckBox = view.findViewById<CheckBox>(R.id.checkbox_auto_off)
-        var id: UUID? = null
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.item_trash -> replaceFragment(parentFragmentManager, DeleteAlarmFragment())
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_alarm_list, menu)
     }
 
 

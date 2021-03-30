@@ -1,0 +1,24 @@
+com/runtimeterror/aild/databinding/FragmentAlarmListBinding.java
+ com.runtimeterror.aild.databinding.FragmentAlarmListBinding
+com/runtimeterror/aild/db/dao/AlarmDao_Impl.java
+ com.runtimeterror.aild.db.dao.AlarmDao_Impl
+ com.runtimeterror.aild.db.dao.AlarmDao_Impl$1
+ com.runtimeterror.aild.db.dao.AlarmDao_Impl$2
+ com.runtimeterror.aild.db.dao.AlarmDao_Impl$3
+ com.runtimeterror.aild.db.dao.AlarmDao_Impl$4
+ com.runtimeterror.aild.db.dao.AlarmDao_Impl$5
+com/runtimeterror/aild/databinding/FragmentAlarmBinding.java
+ com.runtimeterror.aild.databinding.FragmentAlarmBinding
+com/runtimeterror/aild/databinding/FragmentDeleteAlarmBinding.java
+ com.runtimeterror.aild.databinding.FragmentDeleteAlarmBinding
+com/runtimeterror/aild/db/AlarmDatabase_Impl.java
+ com.runtimeterror.aild.db.AlarmDatabase_Impl
+ com.runtimeterror.aild.db.AlarmDatabase_Impl$1
+com/runtimeterror/aild/databinding/AlarmItemViewBinding.java
+ com.runtimeterror.aild.databinding.AlarmItemViewBinding
+com/runtimeterror/aild/databinding/ActivityRingBinding.java
+ com.runtimeterror.aild.databinding.ActivityRingBinding
+com/runtimeterror/aild/BuildConfig.java
+ com.runtimeterror.aild.BuildConfig
+com/runtimeterror/aild/databinding/ActivityMainBinding.java
+ com.runtimeterror.aild.databinding.ActivityMainBinding
