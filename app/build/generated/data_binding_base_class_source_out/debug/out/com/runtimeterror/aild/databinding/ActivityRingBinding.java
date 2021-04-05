@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import com.runtimeterror.aild.R;
 import java.lang.NullPointerException;
@@ -24,6 +25,9 @@ public final class ActivityRingBinding implements ViewBinding {
   public final Button buttonDismiss;
 
   @NonNull
+  public final Guideline guideline5;
+
+  @NonNull
   public final ImageView ivAcClock;
 
   @NonNull
@@ -33,10 +37,11 @@ public final class ActivityRingBinding implements ViewBinding {
   public final TextView textView;
 
   private ActivityRingBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonDismiss,
-      @NonNull ImageView ivAcClock, @NonNull ConstraintLayout linearLayout,
-      @NonNull TextView textView) {
+      @NonNull Guideline guideline5, @NonNull ImageView ivAcClock,
+      @NonNull ConstraintLayout linearLayout, @NonNull TextView textView) {
     this.rootView = rootView;
     this.buttonDismiss = buttonDismiss;
+    this.guideline5 = guideline5;
     this.ivAcClock = ivAcClock;
     this.linearLayout = linearLayout;
     this.textView = textView;
@@ -75,6 +80,12 @@ public final class ActivityRingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.guideline5;
+      Guideline guideline5 = rootView.findViewById(id);
+      if (guideline5 == null) {
+        break missingId;
+      }
+
       id = R.id.iv_ac_clock;
       ImageView ivAcClock = rootView.findViewById(id);
       if (ivAcClock == null) {
@@ -89,8 +100,8 @@ public final class ActivityRingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityRingBinding((ConstraintLayout) rootView, buttonDismiss, ivAcClock,
-          linearLayout, textView);
+      return new ActivityRingBinding((ConstraintLayout) rootView, buttonDismiss, guideline5,
+          ivAcClock, linearLayout, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

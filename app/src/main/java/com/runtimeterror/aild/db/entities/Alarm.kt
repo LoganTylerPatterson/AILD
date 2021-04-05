@@ -7,8 +7,8 @@ import java.util.*
 
 @Entity(tableName = "alarm")
 data class Alarm(
-        @PrimaryKey
-        var id: UUID = UUID.randomUUID(),
+        @PrimaryKey(autoGenerate = true)
+        var id: Int = 0,
         var title: String? = "My Alarm",
         var hour: Int = 12,
         var minute: Int = 12,

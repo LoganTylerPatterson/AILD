@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -23,7 +22,7 @@ public final class FragmentAlarmListBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final LinearLayout boxFinalizeEdit;
+  public final ConstraintLayout boxFinalizeEdit;
 
   @NonNull
   public final Button buttonCancel;
@@ -41,7 +40,7 @@ public final class FragmentAlarmListBinding implements ViewBinding {
   public final RecyclerView rvAlarms;
 
   private FragmentAlarmListBinding(@NonNull ConstraintLayout rootView,
-      @NonNull LinearLayout boxFinalizeEdit, @NonNull Button buttonCancel,
+      @NonNull ConstraintLayout boxFinalizeEdit, @NonNull Button buttonCancel,
       @NonNull Button buttonDelete, @NonNull FloatingActionButton fabAlarm,
       @NonNull Guideline guideline2, @NonNull RecyclerView rvAlarms) {
     this.rootView = rootView;
@@ -81,7 +80,7 @@ public final class FragmentAlarmListBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.box_finalize_edit;
-      LinearLayout boxFinalizeEdit = rootView.findViewById(id);
+      ConstraintLayout boxFinalizeEdit = rootView.findViewById(id);
       if (boxFinalizeEdit == null) {
         break missingId;
       }

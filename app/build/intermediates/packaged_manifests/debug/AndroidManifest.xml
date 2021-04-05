@@ -21,22 +21,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.AILD" >
-        <activity android:name="com.runtimeterror.aild.MainActivity" >
+        <activity android:name="com.runtimeterror.aild.activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.runtimeterror.aild.RingActivity" />
+        <activity android:name="com.runtimeterror.aild.activities.RingActivity" />
 
         <service android:name="com.runtimeterror.aild.service.AlarmService" />
         <service android:name="com.runtimeterror.aild.service.RescheduleAlarmService" />
 
         <receiver
-            android:name="com.runtimeterror.aild.AlarmBroadCastReciever"
+            android:name="com.runtimeterror.aild.recievers.AlarmBroadCastReciever"
             android:directBootAware="true"
             android:enabled="true"
             android:exported="true" >

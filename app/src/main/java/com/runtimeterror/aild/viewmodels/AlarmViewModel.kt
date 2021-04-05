@@ -1,9 +1,8 @@
 package com.runtimeterror.aild.viewmodels
 
 import androidx.lifecycle.*
-import com.runtimeterror.aild.Repository
+import com.runtimeterror.aild.db.Repository
 import com.runtimeterror.aild.db.entities.Alarm
-import com.runtimeterror.aild.fragments.AlarmFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
@@ -11,14 +10,14 @@ import java.util.*
 class AlarmViewModel : ViewModel() {
 
     private val alarmRepository = Repository.get()
-    var alarmIdLiveData = MutableLiveData<UUID>()
+    var alarmIdLiveData = MutableLiveData<Int>()
 
     val alarmLiveData: LiveData<Alarm> =
         Transformations.switchMap(alarmIdLiveData) { alarmId ->
             alarmRepository.getAlarm(alarmId,viewModelScope)
         }
 
-    fun loadAlarm(alarmId: UUID) {
+    fun loadAlarm(alarmId: Int) {
         alarmIdLiveData.value = alarmId
     }
 

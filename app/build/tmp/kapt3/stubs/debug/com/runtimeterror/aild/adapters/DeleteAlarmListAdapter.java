@@ -65,7 +65,7 @@ public final class DeleteAlarmListAdapter extends androidx.recyclerview.widget.R
         super();
     }
     
-    @kotlin.Metadata(mv = {1, 4, 2}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0086\u0004\u0018\u00002\u00020\u0001B!\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u00a2\u0006\u0002\u0010\bR\u0011\u0010\t\u001a\u00020\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0019\u0010\r\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0019\u0010\u0012\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0011R\u0019\u0010\u0014\u001a\n \u000f*\u0004\u0018\u00010\u00150\u0015\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0019\u0010\u0018\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0011R\u0019\u0010\u001a\u001a\n \u000f*\u0004\u0018\u00010\u00150\u0015\u00a2\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0017R\u001c\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R\u0019\u0010\"\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0011\u00a8\u0006$"}, d2 = {"Lcom/runtimeterror/aild/adapters/DeleteAlarmListAdapter$AlarmViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "onItemClicked", "Lkotlin/Function1;", "", "", "(Lcom/runtimeterror/aild/adapters/DeleteAlarmListAdapter;Landroid/view/View;Lkotlin/jvm/functions/Function1;)V", "activeSwitch", "Landroidx/appcompat/widget/SwitchCompat;", "getActiveSwitch", "()Landroidx/appcompat/widget/SwitchCompat;", "alarmTitle", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "getAlarmTitle", "()Landroid/widget/TextView;", "amTextView", "getAmTextView", "autoDismissCheckBox", "Landroid/widget/CheckBox;", "getAutoDismissCheckBox", "()Landroid/widget/CheckBox;", "autoDismissText", "getAutoDismissText", "deleteCheckbox", "getDeleteCheckbox", "id", "Ljava/util/UUID;", "getId", "()Ljava/util/UUID;", "setId", "(Ljava/util/UUID;)V", "timeTextView", "getTimeTextView", "app_debug"})
+    @kotlin.Metadata(mv = {1, 4, 2}, bv = {1, 0, 3}, k = 1, d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0086\u0004\u0018\u00002\u00020\u0001B!\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u00a2\u0006\u0002\u0010\bR\u0011\u0010\t\u001a\u00020\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0019\u0010\r\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0019\u0010\u0012\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0011R\u0019\u0010\u0014\u001a\n \u000f*\u0004\u0018\u00010\u00150\u0015\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0019\u0010\u0018\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0011R\u0019\u0010\u001a\u001a\n \u000f*\u0004\u0018\u00010\u00150\u0015\u00a2\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0017R\u001a\u0010\u001c\u001a\u00020\u0006X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u001e\"\u0004\b\u001f\u0010 R\u0019\u0010!\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000e\u00a2\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u0011\u00a8\u0006#"}, d2 = {"Lcom/runtimeterror/aild/adapters/DeleteAlarmListAdapter$AlarmViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "onItemClicked", "Lkotlin/Function1;", "", "", "(Lcom/runtimeterror/aild/adapters/DeleteAlarmListAdapter;Landroid/view/View;Lkotlin/jvm/functions/Function1;)V", "activeSwitch", "Landroidx/appcompat/widget/SwitchCompat;", "getActiveSwitch", "()Landroidx/appcompat/widget/SwitchCompat;", "alarmTitle", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "getAlarmTitle", "()Landroid/widget/TextView;", "amTextView", "getAmTextView", "autoDismissCheckBox", "Landroid/widget/CheckBox;", "getAutoDismissCheckBox", "()Landroid/widget/CheckBox;", "autoDismissText", "getAutoDismissText", "deleteCheckbox", "getDeleteCheckbox", "id", "getId", "()I", "setId", "(I)V", "timeTextView", "getTimeTextView", "app_debug"})
     public final class AlarmViewHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
         private final android.widget.TextView alarmTitle = null;
         private final android.widget.TextView timeTextView = null;
@@ -75,8 +75,7 @@ public final class DeleteAlarmListAdapter extends androidx.recyclerview.widget.R
         @org.jetbrains.annotations.NotNull()
         private final androidx.appcompat.widget.SwitchCompat activeSwitch = null;
         private final android.widget.CheckBox autoDismissCheckBox = null;
-        @org.jetbrains.annotations.Nullable()
-        private java.util.UUID id;
+        private int id = 0;
         
         public final android.widget.TextView getAlarmTitle() {
             return null;
@@ -107,13 +106,11 @@ public final class DeleteAlarmListAdapter extends androidx.recyclerview.widget.R
             return null;
         }
         
-        @org.jetbrains.annotations.Nullable()
-        public final java.util.UUID getId() {
-            return null;
+        public final int getId() {
+            return 0;
         }
         
-        public final void setId(@org.jetbrains.annotations.Nullable()
-        java.util.UUID p0) {
+        public final void setId(int p0) {
         }
         
         public AlarmViewHolder(@org.jetbrains.annotations.NotNull()

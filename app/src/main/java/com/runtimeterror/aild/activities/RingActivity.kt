@@ -1,16 +1,12 @@
-package com.runtimeterror.aild
+package com.runtimeterror.aild.activities
 
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.runtimeterror.aild.databinding.ActivityRingBinding
-import com.runtimeterror.aild.db.entities.Alarm
 import com.runtimeterror.aild.service.AlarmService
-import java.util.*
 
 class RingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRingBinding

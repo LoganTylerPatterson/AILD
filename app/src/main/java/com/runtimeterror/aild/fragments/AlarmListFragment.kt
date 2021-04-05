@@ -6,19 +6,18 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.TimePicker
 import androidx.appcompat.widget.SwitchCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.runtimeterror.aild.replaceFragment
 import com.runtimeterror.aild.R
-import com.runtimeterror.aild.TimePickerUtil
 import com.runtimeterror.aild.databinding.FragmentAlarmListBinding
 import com.runtimeterror.aild.db.entities.Alarm
-import com.runtimeterror.aild.getDateString
+import com.runtimeterror.aild.util.cancelAlarm
+import com.runtimeterror.aild.util.getDateString
+import com.runtimeterror.aild.util.replaceFragment
+import com.runtimeterror.aild.util.setAlarm
 import com.runtimeterror.aild.viewmodels.AlarmListViewModel
 import java.util.*
 
@@ -32,24 +31,11 @@ class AlarmListFragment : Fragment() {
     private var adapter: AlarmListAdapter = AlarmListAdapter(emptyList())
     private lateinit var viewModel: AlarmListViewModel
 
-    inner class AlarmViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val alarmTitle = view.findViewById<TextView>(R.id.text_view_title)
-        val timeTextView = view.findViewById<TextView>(R.id.time_text_view)
-        val deletCheckbox = view.findViewById<CheckBox>(R.id.check_delete)
-        val amTextView = view.findViewById<TextView>(R.id.am_text_view)
-        val textView = view.findViewById<TextView>(R.id.text_view_dismiss)
-        val activeSwitch: SwitchCompat = view.findViewById(R.id.switch_on)
-        val autoDismissCheckBox = view.findViewById<CheckBox>(R.id.checkbox_auto_off)
-        var id: UUID? = null
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)
             .get(AlarmListViewModel::class.java)
-        setHasOptionsMenu(true)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,6 +59,7 @@ class AlarmListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        setHasOptionsMenu(true)
         Log.d(TAG, "OnStart Called")
         viewModel.alarmListLiveData.observe(
             viewLifecycleOwner,
@@ -110,6 +97,7 @@ class AlarmListFragment : Fragment() {
         }
 
         private fun bind(holder: AlarmViewHolder, position: Int) {
+            val alarm = alarmList[position]
             holder.timeTextView.text = getDateString(
                 alarmList[position].hour,
                 alarmList[position].minute
@@ -129,7 +117,27 @@ class AlarmListFragment : Fragment() {
                 replaceFragment(parentFragmentManager, frag)
             }
 
+            holder.activeSwitch.setOnClickListener{
+                if(alarm.active){
+                    holder.activeSwitch.isActivated = false
+                    cancelAlarm(alarm, context)
+                }else{
+                    setAlarm(alarm, context)
+                }
+            }
+
         }
+    }
+
+    inner class AlarmViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val alarmTitle = view.findViewById<TextView>(R.id.text_view_title)
+        val timeTextView = view.findViewById<TextView>(R.id.time_text_view)
+        val deletCheckbox = view.findViewById<CheckBox>(R.id.check_delete)
+        val amTextView = view.findViewById<TextView>(R.id.am_text_view)
+        val textView = view.findViewById<TextView>(R.id.text_view_dismiss)
+        val activeSwitch: SwitchCompat = view.findViewById(R.id.switch_on)
+        val autoDismissCheckBox = view.findViewById<CheckBox>(R.id.checkbox_auto_off)
+        var id: Int = 0
     }
 
 

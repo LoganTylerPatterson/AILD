@@ -1,4 +1,4 @@
-package com.runtimeterror.aild
+package com.runtimeterror.aild.db
 
 import android.content.Context
 import androidx.lifecycle.LiveData
@@ -26,7 +26,7 @@ class Repository private constructor(context: Context) {
 
     fun getAlarms(): LiveData<List<Alarm>> = alarmDao.getAllAlarms()
 
-    fun getAlarm(id: UUID, scope: CoroutineScope): LiveData<Alarm>?{
+    fun getAlarm(id: Int, scope: CoroutineScope): LiveData<Alarm>?{
         var alarmLiveData:LiveData<Alarm>?= null
         scope.launch(Dispatchers.IO) {
             alarmLiveData = alarmDao.getAlarm(id)

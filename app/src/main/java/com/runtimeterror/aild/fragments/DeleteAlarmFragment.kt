@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.runtimeterror.aild.R
 import com.runtimeterror.aild.adapters.DeleteAlarmListAdapter
 import com.runtimeterror.aild.databinding.FragmentDeleteAlarmBinding
 import com.runtimeterror.aild.db.entities.Alarm
-import com.runtimeterror.aild.replaceFragment
+import com.runtimeterror.aild.util.replaceFragment
 import com.runtimeterror.aild.viewmodels.AlarmListViewModel
 import com.runtimeterror.aild.viewmodels.AlarmViewModel
 import java.util.*

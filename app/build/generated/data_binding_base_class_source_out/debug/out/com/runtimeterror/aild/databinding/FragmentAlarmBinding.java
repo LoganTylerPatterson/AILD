@@ -6,10 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
@@ -26,7 +26,10 @@ public final class FragmentAlarmBinding implements ViewBinding {
   public final Button buttonDone;
 
   @NonNull
-  public final Button buttonSound;
+  public final Button buttonPlayTest;
+
+  @NonNull
+  public final Spinner buttonSound;
 
   @NonNull
   public final EditText editTextAlarmTitle;
@@ -37,20 +40,17 @@ public final class FragmentAlarmBinding implements ViewBinding {
   @NonNull
   public final TimePicker timePicker;
 
-  @NonNull
-  public final Toolbar toolbarAlarmFrag;
-
   private FragmentAlarmBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonDone,
-      @NonNull Button buttonSound, @NonNull EditText editTextAlarmTitle,
-      @NonNull Guideline guideline3, @NonNull TimePicker timePicker,
-      @NonNull Toolbar toolbarAlarmFrag) {
+      @NonNull Button buttonPlayTest, @NonNull Spinner buttonSound,
+      @NonNull EditText editTextAlarmTitle, @NonNull Guideline guideline3,
+      @NonNull TimePicker timePicker) {
     this.rootView = rootView;
     this.buttonDone = buttonDone;
+    this.buttonPlayTest = buttonPlayTest;
     this.buttonSound = buttonSound;
     this.editTextAlarmTitle = editTextAlarmTitle;
     this.guideline3 = guideline3;
     this.timePicker = timePicker;
-    this.toolbarAlarmFrag = toolbarAlarmFrag;
   }
 
   @Override
@@ -86,8 +86,14 @@ public final class FragmentAlarmBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.button_play_test;
+      Button buttonPlayTest = rootView.findViewById(id);
+      if (buttonPlayTest == null) {
+        break missingId;
+      }
+
       id = R.id.button_sound;
-      Button buttonSound = rootView.findViewById(id);
+      Spinner buttonSound = rootView.findViewById(id);
       if (buttonSound == null) {
         break missingId;
       }
@@ -110,14 +116,8 @@ public final class FragmentAlarmBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.toolbar_alarm_frag;
-      Toolbar toolbarAlarmFrag = rootView.findViewById(id);
-      if (toolbarAlarmFrag == null) {
-        break missingId;
-      }
-
-      return new FragmentAlarmBinding((ConstraintLayout) rootView, buttonDone, buttonSound,
-          editTextAlarmTitle, guideline3, timePicker, toolbarAlarmFrag);
+      return new FragmentAlarmBinding((ConstraintLayout) rootView, buttonDone, buttonPlayTest,
+          buttonSound, editTextAlarmTitle, guideline3, timePicker);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

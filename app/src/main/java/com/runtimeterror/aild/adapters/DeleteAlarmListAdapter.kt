@@ -9,12 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.runtimeterror.aild.R
-import com.runtimeterror.aild.databinding.AlarmItemViewBinding
 import com.runtimeterror.aild.db.entities.Alarm
-import com.runtimeterror.aild.fragments.AlarmFragment
-import com.runtimeterror.aild.fragments.AlarmListFragment
-import com.runtimeterror.aild.getDateString
-import com.runtimeterror.aild.replaceFragment
+import com.runtimeterror.aild.util.getDateString
 import java.util.*
 
 class DeleteAlarmListAdapter(
@@ -31,7 +27,7 @@ class DeleteAlarmListAdapter(
         val autoDismissText = view.findViewById<TextView>(R.id.text_view_dismiss)
         val activeSwitch: SwitchCompat = view.findViewById(R.id.switch_on)
         val autoDismissCheckBox = view.findViewById<CheckBox>(R.id.checkbox_auto_off)
-        var id: UUID? = null
+        var id: Int = 0
 
         init{
             view.setOnClickListener{
@@ -68,7 +64,6 @@ class DeleteAlarmListAdapter(
         holder.autoDismissCheckBox.visibility = View.GONE
         holder.autoDismissText.visibility = View.GONE
         holder.deleteCheckbox.visibility = View.VISIBLE
-        holder.id = alarmList[position].id
 
 //        holder.itemView.setOnClickListener {
 //            holder.deleteCheckbox.isChecked = true

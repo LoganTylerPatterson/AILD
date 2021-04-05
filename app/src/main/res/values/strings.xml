@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">AILD</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cd_add_alarm">Add an alarm</string>
     <string name="pick_an_alarm_sound">Pick an alarm sound</string>
@@ -8,4 +7,14 @@
     <string name="enter_alarm_title">Enter Alarm Title</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="test_alarmsound">Test Sound</string>
+    <string name="stop">Stop</string>
+    <string name="are_you_dreaming">Are you dreaming?</string>
+    <string name="dismiss">Dismiss</string>
+    <string-array name="sound_array">
+        <item>BetterDays</item>
+        <item>OnceAgain</item>
+        <item>SlowMotion</item>
+        <item>Tomorrow</item>
+    </string-array>
 </resources>

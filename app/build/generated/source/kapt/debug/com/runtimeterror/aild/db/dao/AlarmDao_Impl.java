@@ -9,7 +9,6 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
-import com.runtimeterror.aild.db.AlarmTypeConverters;
 import com.runtimeterror.aild.db.entities.Alarm;
 import java.lang.Exception;
 import java.lang.Override;
@@ -17,7 +16,6 @@ import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.Callable;
 
 @SuppressWarnings({"unchecked", "deprecation"})
@@ -25,8 +23,6 @@ public final class AlarmDao_Impl implements AlarmDao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<Alarm> __insertionAdapterOfAlarm;
-
-  private final AlarmTypeConverters __alarmTypeConverters = new AlarmTypeConverters();
 
   private final EntityDeletionOrUpdateAdapter<Alarm> __deletionAdapterOfAlarm;
 
@@ -37,18 +33,12 @@ public final class AlarmDao_Impl implements AlarmDao {
     this.__insertionAdapterOfAlarm = new EntityInsertionAdapter<Alarm>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `alarm` (`id`,`title`,`hour`,`minute`,`dayHalf`,`active`,`autoOff`,`repeat`,`sound`) VALUES (?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `alarm` (`id`,`title`,`hour`,`minute`,`dayHalf`,`active`,`autoOff`,`repeat`,`sound`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Alarm value) {
-        final String _tmp;
-        _tmp = __alarmTypeConverters.fromUUID(value.getId());
-        if (_tmp == null) {
-          stmt.bindNull(1);
-        } else {
-          stmt.bindString(1, _tmp);
-        }
+        stmt.bindLong(1, value.getId());
         if (value.getTitle() == null) {
           stmt.bindNull(2);
         } else {
@@ -61,20 +51,16 @@ public final class AlarmDao_Impl implements AlarmDao {
         } else {
           stmt.bindString(5, value.getDayHalf());
         }
+        final int _tmp;
+        _tmp = value.getActive() ? 1 : 0;
+        stmt.bindLong(6, _tmp);
         final int _tmp_1;
-        _tmp_1 = value.getActive() ? 1 : 0;
-        stmt.bindLong(6, _tmp_1);
+        _tmp_1 = value.getAutoOff() ? 1 : 0;
+        stmt.bindLong(7, _tmp_1);
         final int _tmp_2;
-        _tmp_2 = value.getAutoOff() ? 1 : 0;
-        stmt.bindLong(7, _tmp_2);
-        final int _tmp_3;
-        _tmp_3 = value.getRepeat() ? 1 : 0;
-        stmt.bindLong(8, _tmp_3);
-        if (value.getSound() == null) {
-          stmt.bindNull(9);
-        } else {
-          stmt.bindString(9, value.getSound());
-        }
+        _tmp_2 = value.getRepeat() ? 1 : 0;
+        stmt.bindLong(8, _tmp_2);
+        stmt.bindLong(9, value.getSound());
       }
     };
     this.__deletionAdapterOfAlarm = new EntityDeletionOrUpdateAdapter<Alarm>(__db) {
@@ -85,13 +71,7 @@ public final class AlarmDao_Impl implements AlarmDao {
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Alarm value) {
-        final String _tmp;
-        _tmp = __alarmTypeConverters.fromUUID(value.getId());
-        if (_tmp == null) {
-          stmt.bindNull(1);
-        } else {
-          stmt.bindString(1, _tmp);
-        }
+        stmt.bindLong(1, value.getId());
       }
     };
     this.__updateAdapterOfAlarm = new EntityDeletionOrUpdateAdapter<Alarm>(__db) {
@@ -102,13 +82,7 @@ public final class AlarmDao_Impl implements AlarmDao {
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Alarm value) {
-        final String _tmp;
-        _tmp = __alarmTypeConverters.fromUUID(value.getId());
-        if (_tmp == null) {
-          stmt.bindNull(1);
-        } else {
-          stmt.bindString(1, _tmp);
-        }
+        stmt.bindLong(1, value.getId());
         if (value.getTitle() == null) {
           stmt.bindNull(2);
         } else {
@@ -121,27 +95,17 @@ public final class AlarmDao_Impl implements AlarmDao {
         } else {
           stmt.bindString(5, value.getDayHalf());
         }
+        final int _tmp;
+        _tmp = value.getActive() ? 1 : 0;
+        stmt.bindLong(6, _tmp);
         final int _tmp_1;
-        _tmp_1 = value.getActive() ? 1 : 0;
-        stmt.bindLong(6, _tmp_1);
+        _tmp_1 = value.getAutoOff() ? 1 : 0;
+        stmt.bindLong(7, _tmp_1);
         final int _tmp_2;
-        _tmp_2 = value.getAutoOff() ? 1 : 0;
-        stmt.bindLong(7, _tmp_2);
-        final int _tmp_3;
-        _tmp_3 = value.getRepeat() ? 1 : 0;
-        stmt.bindLong(8, _tmp_3);
-        if (value.getSound() == null) {
-          stmt.bindNull(9);
-        } else {
-          stmt.bindString(9, value.getSound());
-        }
-        final String _tmp_4;
-        _tmp_4 = __alarmTypeConverters.fromUUID(value.getId());
-        if (_tmp_4 == null) {
-          stmt.bindNull(10);
-        } else {
-          stmt.bindString(10, _tmp_4);
-        }
+        _tmp_2 = value.getRepeat() ? 1 : 0;
+        stmt.bindLong(8, _tmp_2);
+        stmt.bindLong(9, value.getSound());
+        stmt.bindLong(10, value.getId());
       }
     };
   }
@@ -203,10 +167,8 @@ public final class AlarmDao_Impl implements AlarmDao {
           final List<Alarm> _result = new ArrayList<Alarm>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Alarm _item;
-            final UUID _tmpId;
-            final String _tmp;
-            _tmp = _cursor.getString(_cursorIndexOfId);
-            _tmpId = __alarmTypeConverters.toUUID(_tmp);
+            final int _tmpId;
+            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpTitle;
             _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
             final int _tmpHour;
@@ -216,19 +178,19 @@ public final class AlarmDao_Impl implements AlarmDao {
             final String _tmpDayHalf;
             _tmpDayHalf = _cursor.getString(_cursorIndexOfDayHalf);
             final boolean _tmpActive;
-            final int _tmp_1;
-            _tmp_1 = _cursor.getInt(_cursorIndexOfActive);
-            _tmpActive = _tmp_1 != 0;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfActive);
+            _tmpActive = _tmp != 0;
             final boolean _tmpAutoOff;
-            final int _tmp_2;
-            _tmp_2 = _cursor.getInt(_cursorIndexOfAutoOff);
-            _tmpAutoOff = _tmp_2 != 0;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfAutoOff);
+            _tmpAutoOff = _tmp_1 != 0;
             final boolean _tmpRepeat;
-            final int _tmp_3;
-            _tmp_3 = _cursor.getInt(_cursorIndexOfRepeat);
-            _tmpRepeat = _tmp_3 != 0;
-            final String _tmpSound;
-            _tmpSound = _cursor.getString(_cursorIndexOfSound);
+            final int _tmp_2;
+            _tmp_2 = _cursor.getInt(_cursorIndexOfRepeat);
+            _tmpRepeat = _tmp_2 != 0;
+            final int _tmpSound;
+            _tmpSound = _cursor.getInt(_cursorIndexOfSound);
             _item = new Alarm(_tmpId,_tmpTitle,_tmpHour,_tmpMinute,_tmpDayHalf,_tmpActive,_tmpAutoOff,_tmpRepeat,_tmpSound);
             _result.add(_item);
           }
@@ -246,17 +208,11 @@ public final class AlarmDao_Impl implements AlarmDao {
   }
 
   @Override
-  public LiveData<Alarm> getAlarm(final UUID id) {
+  public LiveData<Alarm> getAlarm(final int id) {
     final String _sql = "SELECT * FROM alarm WHERE id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
-    final String _tmp;
-    _tmp = __alarmTypeConverters.fromUUID(id);
-    if (_tmp == null) {
-      _statement.bindNull(_argIndex);
-    } else {
-      _statement.bindString(_argIndex, _tmp);
-    }
+    _statement.bindLong(_argIndex, id);
     return __db.getInvalidationTracker().createLiveData(new String[]{"alarm"}, false, new Callable<Alarm>() {
       @Override
       public Alarm call() throws Exception {
@@ -273,10 +229,8 @@ public final class AlarmDao_Impl implements AlarmDao {
           final int _cursorIndexOfSound = CursorUtil.getColumnIndexOrThrow(_cursor, "sound");
           final Alarm _result;
           if(_cursor.moveToFirst()) {
-            final UUID _tmpId;
-            final String _tmp_1;
-            _tmp_1 = _cursor.getString(_cursorIndexOfId);
-            _tmpId = __alarmTypeConverters.toUUID(_tmp_1);
+            final int _tmpId;
+            _tmpId = _cursor.getInt(_cursorIndexOfId);
             final String _tmpTitle;
             _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
             final int _tmpHour;
@@ -286,19 +240,19 @@ public final class AlarmDao_Impl implements AlarmDao {
             final String _tmpDayHalf;
             _tmpDayHalf = _cursor.getString(_cursorIndexOfDayHalf);
             final boolean _tmpActive;
-            final int _tmp_2;
-            _tmp_2 = _cursor.getInt(_cursorIndexOfActive);
-            _tmpActive = _tmp_2 != 0;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfActive);
+            _tmpActive = _tmp != 0;
             final boolean _tmpAutoOff;
-            final int _tmp_3;
-            _tmp_3 = _cursor.getInt(_cursorIndexOfAutoOff);
-            _tmpAutoOff = _tmp_3 != 0;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfAutoOff);
+            _tmpAutoOff = _tmp_1 != 0;
             final boolean _tmpRepeat;
-            final int _tmp_4;
-            _tmp_4 = _cursor.getInt(_cursorIndexOfRepeat);
-            _tmpRepeat = _tmp_4 != 0;
-            final String _tmpSound;
-            _tmpSound = _cursor.getString(_cursorIndexOfSound);
+            final int _tmp_2;
+            _tmp_2 = _cursor.getInt(_cursorIndexOfRepeat);
+            _tmpRepeat = _tmp_2 != 0;
+            final int _tmpSound;
+            _tmpSound = _cursor.getInt(_cursorIndexOfSound);
             _result = new Alarm(_tmpId,_tmpTitle,_tmpHour,_tmpMinute,_tmpDayHalf,_tmpActive,_tmpAutoOff,_tmpRepeat,_tmpSound);
           } else {
             _result = null;
