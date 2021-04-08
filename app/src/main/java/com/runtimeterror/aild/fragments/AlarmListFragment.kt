@@ -59,7 +59,6 @@ class AlarmListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        setHasOptionsMenu(true)
         Log.d(TAG, "OnStart Called")
         viewModel.alarmListLiveData.observe(
             viewLifecycleOwner,
@@ -69,6 +68,11 @@ class AlarmListFragment : Fragment() {
                 }
             }
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setHasOptionsMenu(true)
     }
 
     private fun updateUI(alarms: List<Alarm>) {
@@ -96,19 +100,37 @@ class AlarmListFragment : Fragment() {
             bind(holder, position)
         }
 
+        /**
+         *All this does is not make my onBind so damn messy
+         */
         private fun bind(holder: AlarmViewHolder, position: Int) {
             val alarm = alarmList[position]
+
+            //Formats that damn date string
             holder.timeTextView.text = getDateString(
                 alarmList[position].hour,
                 alarmList[position].minute
             )
+
+            //Gets am/pm text, and sets the title under the alarm time and meridian
             holder.alarmTitle.text = alarmList[position].title
             holder.amTextView.text = alarmList[position].dayHalf
-            holder.amTextView.text = alarmList[position].dayHalf
+
+            //Handles whether to show the auto dismiss text and box
+            if(!alarm.autoOff){
+                holder.autoDismissCheckBox.visibility = View.GONE
+                holder.textViewDismiss.visibility = View.GONE
+            }else{
+                holder.autoDismissCheckBox.isChecked =true
+                holder.autoDismissCheckBox.visibility = View.VISIBLE
+            }
+
+            //Sets whether the alarm is active or not
             holder.activeSwitch.isChecked = alarmList[position].active
-            holder.autoDismissCheckBox.isChecked = alarmList[position].autoOff
             holder.id = alarmList[position].id
 
+            //If the user clicks on the view,
+            //We will display the alarm details
             holder.itemView.setOnClickListener {
                 val frag = AlarmFragment()
                 val args = Bundle()
@@ -117,6 +139,7 @@ class AlarmListFragment : Fragment() {
                 replaceFragment(parentFragmentManager, frag)
             }
 
+            //If the user clicks the active switch we will turn off the alarm
             holder.activeSwitch.setOnClickListener{
                 if(alarm.active){
                     holder.activeSwitch.isActivated = false
@@ -129,18 +152,23 @@ class AlarmListFragment : Fragment() {
         }
     }
 
+    /**
+     * My bitchin viewHolder class
+     */
     inner class AlarmViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val alarmTitle = view.findViewById<TextView>(R.id.text_view_title)
         val timeTextView = view.findViewById<TextView>(R.id.time_text_view)
         val deletCheckbox = view.findViewById<CheckBox>(R.id.check_delete)
         val amTextView = view.findViewById<TextView>(R.id.am_text_view)
-        val textView = view.findViewById<TextView>(R.id.text_view_dismiss)
+        val textViewDismiss = view.findViewById<TextView>(R.id.text_view_dismiss)
         val activeSwitch: SwitchCompat = view.findViewById(R.id.switch_on)
         val autoDismissCheckBox = view.findViewById<CheckBox>(R.id.checkbox_auto_off)
         var id: Int = 0
     }
 
-
+    /**
+     * Sets up my bitchin options menu, should also add a settings probably
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.item_trash -> replaceFragment(parentFragmentManager, DeleteAlarmFragment())
@@ -148,7 +176,12 @@ class AlarmListFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
+    /**
+     * Inflates my bitchin options menu
+     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        //Have to clear the menu so shit doesnt get duplicated
+        menu.clear()
         inflater.inflate(R.menu.menu_alarm_list, menu)
     }
 

@@ -33,7 +33,7 @@ public final class AlarmDao_Impl implements AlarmDao {
     this.__insertionAdapterOfAlarm = new EntityInsertionAdapter<Alarm>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `alarm` (`id`,`title`,`hour`,`minute`,`dayHalf`,`active`,`autoOff`,`repeat`,`sound`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `alarm` (`id`,`title`,`hour`,`minute`,`dayHalf`,`active`,`autoOff`,`autoOffDuration`,`repeat`,`sound`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -57,10 +57,11 @@ public final class AlarmDao_Impl implements AlarmDao {
         final int _tmp_1;
         _tmp_1 = value.getAutoOff() ? 1 : 0;
         stmt.bindLong(7, _tmp_1);
+        stmt.bindLong(8, value.getAutoOffDuration());
         final int _tmp_2;
         _tmp_2 = value.getRepeat() ? 1 : 0;
-        stmt.bindLong(8, _tmp_2);
-        stmt.bindLong(9, value.getSound());
+        stmt.bindLong(9, _tmp_2);
+        stmt.bindLong(10, value.getSound());
       }
     };
     this.__deletionAdapterOfAlarm = new EntityDeletionOrUpdateAdapter<Alarm>(__db) {
@@ -77,7 +78,7 @@ public final class AlarmDao_Impl implements AlarmDao {
     this.__updateAdapterOfAlarm = new EntityDeletionOrUpdateAdapter<Alarm>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `alarm` SET `id` = ?,`title` = ?,`hour` = ?,`minute` = ?,`dayHalf` = ?,`active` = ?,`autoOff` = ?,`repeat` = ?,`sound` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `alarm` SET `id` = ?,`title` = ?,`hour` = ?,`minute` = ?,`dayHalf` = ?,`active` = ?,`autoOff` = ?,`autoOffDuration` = ?,`repeat` = ?,`sound` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -101,11 +102,12 @@ public final class AlarmDao_Impl implements AlarmDao {
         final int _tmp_1;
         _tmp_1 = value.getAutoOff() ? 1 : 0;
         stmt.bindLong(7, _tmp_1);
+        stmt.bindLong(8, value.getAutoOffDuration());
         final int _tmp_2;
         _tmp_2 = value.getRepeat() ? 1 : 0;
-        stmt.bindLong(8, _tmp_2);
-        stmt.bindLong(9, value.getSound());
-        stmt.bindLong(10, value.getId());
+        stmt.bindLong(9, _tmp_2);
+        stmt.bindLong(10, value.getSound());
+        stmt.bindLong(11, value.getId());
       }
     };
   }
@@ -162,6 +164,7 @@ public final class AlarmDao_Impl implements AlarmDao {
           final int _cursorIndexOfDayHalf = CursorUtil.getColumnIndexOrThrow(_cursor, "dayHalf");
           final int _cursorIndexOfActive = CursorUtil.getColumnIndexOrThrow(_cursor, "active");
           final int _cursorIndexOfAutoOff = CursorUtil.getColumnIndexOrThrow(_cursor, "autoOff");
+          final int _cursorIndexOfAutoOffDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "autoOffDuration");
           final int _cursorIndexOfRepeat = CursorUtil.getColumnIndexOrThrow(_cursor, "repeat");
           final int _cursorIndexOfSound = CursorUtil.getColumnIndexOrThrow(_cursor, "sound");
           final List<Alarm> _result = new ArrayList<Alarm>(_cursor.getCount());
@@ -185,13 +188,15 @@ public final class AlarmDao_Impl implements AlarmDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfAutoOff);
             _tmpAutoOff = _tmp_1 != 0;
+            final int _tmpAutoOffDuration;
+            _tmpAutoOffDuration = _cursor.getInt(_cursorIndexOfAutoOffDuration);
             final boolean _tmpRepeat;
             final int _tmp_2;
             _tmp_2 = _cursor.getInt(_cursorIndexOfRepeat);
             _tmpRepeat = _tmp_2 != 0;
             final int _tmpSound;
             _tmpSound = _cursor.getInt(_cursorIndexOfSound);
-            _item = new Alarm(_tmpId,_tmpTitle,_tmpHour,_tmpMinute,_tmpDayHalf,_tmpActive,_tmpAutoOff,_tmpRepeat,_tmpSound);
+            _item = new Alarm(_tmpId,_tmpTitle,_tmpHour,_tmpMinute,_tmpDayHalf,_tmpActive,_tmpAutoOff,_tmpAutoOffDuration,_tmpRepeat,_tmpSound);
             _result.add(_item);
           }
           return _result;
@@ -225,6 +230,7 @@ public final class AlarmDao_Impl implements AlarmDao {
           final int _cursorIndexOfDayHalf = CursorUtil.getColumnIndexOrThrow(_cursor, "dayHalf");
           final int _cursorIndexOfActive = CursorUtil.getColumnIndexOrThrow(_cursor, "active");
           final int _cursorIndexOfAutoOff = CursorUtil.getColumnIndexOrThrow(_cursor, "autoOff");
+          final int _cursorIndexOfAutoOffDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "autoOffDuration");
           final int _cursorIndexOfRepeat = CursorUtil.getColumnIndexOrThrow(_cursor, "repeat");
           final int _cursorIndexOfSound = CursorUtil.getColumnIndexOrThrow(_cursor, "sound");
           final Alarm _result;
@@ -247,13 +253,15 @@ public final class AlarmDao_Impl implements AlarmDao {
             final int _tmp_1;
             _tmp_1 = _cursor.getInt(_cursorIndexOfAutoOff);
             _tmpAutoOff = _tmp_1 != 0;
+            final int _tmpAutoOffDuration;
+            _tmpAutoOffDuration = _cursor.getInt(_cursorIndexOfAutoOffDuration);
             final boolean _tmpRepeat;
             final int _tmp_2;
             _tmp_2 = _cursor.getInt(_cursorIndexOfRepeat);
             _tmpRepeat = _tmp_2 != 0;
             final int _tmpSound;
             _tmpSound = _cursor.getInt(_cursorIndexOfSound);
-            _result = new Alarm(_tmpId,_tmpTitle,_tmpHour,_tmpMinute,_tmpDayHalf,_tmpActive,_tmpAutoOff,_tmpRepeat,_tmpSound);
+            _result = new Alarm(_tmpId,_tmpTitle,_tmpHour,_tmpMinute,_tmpDayHalf,_tmpActive,_tmpAutoOff,_tmpAutoOffDuration,_tmpRepeat,_tmpSound);
           } else {
             _result = null;
           }

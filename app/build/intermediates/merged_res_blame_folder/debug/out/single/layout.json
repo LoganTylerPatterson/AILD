@@ -1,26 +1,42 @@
 [
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_delete_alarm.xml",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/fragment_delete_alarm.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/alarm_item_view.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/alarm_item_view.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_ring.xml",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/activity_ring.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_alarm_list.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_alarm_list.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_alarm_list.xml",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/fragment_alarm_list.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_ring.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/activity_ring.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/activity_main.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_delete_alarm.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_delete_alarm.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/alarm_item_view.xml",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/alarm_item_view.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/journal_item_view.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/journal_item_view.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_alarm.xml",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/fragment_alarm.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_entry_list.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_entry_list.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_create_entry.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_create_entry.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_alarm.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_alarm.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_entry.xml",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_entry.xml"
     }
 ]

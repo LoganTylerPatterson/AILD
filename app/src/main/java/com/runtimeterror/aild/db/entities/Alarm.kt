@@ -14,7 +14,8 @@ data class Alarm(
         var minute: Int = 12,
         var dayHalf: String = "AM",
         var active: Boolean = true,
-        var autoOff: Boolean = true,
+        var autoOff: Boolean = false,
+        var autoOffDuration: Int = 5,
         var repeat: Boolean = false,
         var sound: Int = 0
 )

@@ -17,13 +17,14 @@
 
     <Spinner
         android:id="@+id/button_sound"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/pick_an_alarm_sound"
         android:padding="8dp"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_alarm_title"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_view_sound_text"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_alarm_title" />
 
     <Button
         android:id="@+id/button_done"
@@ -68,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button_sound" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBox_auto_dismiss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -82,19 +83,19 @@
         android:layout_marginTop="14dp"
         android:text="Set auto-dismiss"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox_auto_dismiss"
         app:layout_constraintStart_toStartOf="@+id/button_play_test"
-        app:layout_constraintTop_toTopOf="@+id/checkBox" />
+        app:layout_constraintTop_toTopOf="@+id/checkBox_auto_dismiss" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/groupd_dismiss_seconds"
+        android:id="@+id/group_dismiss_seconds"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_auto_dismiss"
         app:layout_constraintVertical_bias="0.22000003">
 
         <androidx.constraintlayout.widget.Guideline
@@ -111,11 +112,11 @@
             android:layout_marginStart="5dp"
             android:text="seconds"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editTextNumber3"
+            app:layout_constraintStart_toEndOf="@+id/edit_text_adseconds"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextNumber3"
+            android:id="@+id/edit_text_adseconds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="2"
@@ -130,5 +131,15 @@
             android:orientation="vertical"
             app:layout_constraintGuide_begin="205dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/text_view_sound_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sound: "
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_play_test"
+        app:layout_constraintStart_toStartOf="@+id/button_play_test"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_alarm_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

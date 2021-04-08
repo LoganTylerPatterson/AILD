@@ -1,174 +1,254 @@
 [
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xxhdpi/ic_alarm.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/raw_tomorrow.mp3.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/raw/tomorrow.mp3"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/raw_betterdays.mp3.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/raw/betterdays.mp3"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_trash.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-anydpi/ic_trash.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_create_entry.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_create_entry.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_activity_ring.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/activity_ring.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_trash.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-mdpi/ic_trash.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/raw_tomorrow.mp3.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/raw/tomorrow.mp3"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable_ic_alarm_black.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable/ic_alarm_black.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_add_alarm.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-xhdpi/ic_add_alarm.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/menu_bottom_nav.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/menu/bottom_nav.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/raw_bubble.mp3.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/raw/bubble.mp3"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_trash.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xxhdpi/ic_trash.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_how_to.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xxhdpi/ic_how_to.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/raw_slowmotion.mp3.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/raw/slowmotion.mp3"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable/ic_launcher_background.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_journal.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xhdpi/ic_journal.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_icon_alarm_small.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-xhdpi/icon_alarm_small.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_how_to.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-hdpi/ic_how_to.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_add_alarm.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-xxhdpi/ic_add_alarm.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_add_alarm.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-anydpi/ic_add_alarm.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_entry_list.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_entry_list.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_icon_alarm_small.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-mdpi/icon_alarm_small.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_delete_alarm.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_delete_alarm.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/layout_activity_ring.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/activity_ring.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_icon_alarm_small.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-anydpi/icon_alarm_small.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-hdpi/ic_alarm.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_delete_alarm.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/fragment_delete_alarm.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icon_alarm_small.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-xxhdpi/icon_alarm_small.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_trash.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xhdpi/ic_trash.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_add_alarm.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-hdpi/ic_add_alarm.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_add_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xxhdpi/ic_add_alarm.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_add_alarm.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-mdpi/ic_add_alarm.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_journal_item_view.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/journal_item_view.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable_button_round.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable/button_round.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_trash.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-hdpi/ic_trash.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/menu_menu_alarm_list.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/menu/menu_alarm_list.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_trash.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-xhdpi/ic_trash.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_journal.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-mdpi/ic_journal.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/raw_onceagain.mp3.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/raw/onceagain.mp3"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/raw_betterdays.mp3.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/raw/betterdays.mp3"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_alarm_list.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/fragment_alarm_list.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_icon_alarm_small.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-anydpi/icon_alarm_small.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_icon_alarm_small.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-hdpi/icon_alarm_small.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_journal.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-hdpi/ic_journal.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/menu_menu_alarm_list.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/menu/menu_alarm_list.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/activity_main.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icon_alarm_small.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xxhdpi/icon_alarm_small.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_trash.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-anydpi/ic_trash.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_trash.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-xxhdpi/ic_trash.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_how_to.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xhdpi/ic_how_to.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable_ic_alarm_black.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable/ic_alarm_black.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_entry.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_entry.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/layout_alarm_item_view.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/alarm_item_view.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xhdpi/ic_alarm.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_add_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xhdpi/ic_add_alarm.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_alarm.xml.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/layout/fragment_alarm.xml"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_alarm.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-anydpi/ic_alarm.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_trash.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-hdpi/ic_trash.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-mdpi/ic_alarm.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_icon_alarm_small.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/drawable-mdpi/icon_alarm_small.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_icon_alarm_small.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-hdpi/icon_alarm_small.png"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_alarm_list.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_alarm_list.xml"
     },
     {
-        "merged": "/home/logan/dev/play_android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/logan/dev/play_android/AILD/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_add_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-mdpi/ic_add_alarm.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xhdpi_icon_alarm_small.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xhdpi/icon_alarm_small.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_journal.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-anydpi/ic_journal.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_journal.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-xxhdpi/ic_journal.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_trash.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-mdpi/ic_trash.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_add_alarm.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-hdpi/ic_add_alarm.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/raw_slowmotion.mp3.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/raw/slowmotion.mp3"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/raw_bubble.mp3.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/raw/bubble.mp3"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_add_alarm.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-anydpi/ic_add_alarm.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_alarm_item_view.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/alarm_item_view.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_how_to.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-anydpi/ic_how_to.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable_button_round.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable/button_round.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/layout_fragment_alarm.xml.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/layout/fragment_alarm.xml"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_how_to.png.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/drawable-mdpi/ic_how_to.png"
+    },
+    {
+        "merged": "/home/logan/dev/play/android/AILD/app/build/intermediates/res/merged/debug/raw_onceagain.mp3.flat",
+        "source": "/home/logan/dev/play/android/AILD/app/src/main/res/raw/onceagain.mp3"
     }
 ]

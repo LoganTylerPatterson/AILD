@@ -17,4 +17,5 @@
         <item>SlowMotion</item>
         <item>Tomorrow</item>
     </string-array>
+    <string name="journal_title">Title: %s</string>
 </resources>

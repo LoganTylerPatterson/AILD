@@ -17,12 +17,10 @@ class AlarmBroadCastReciever : BroadcastReceiver() {
 
 
     override fun onReceive(context: Context?, intent: Intent?) {
-        Log.i(TAG, "AlarmBroadCast onRecieve called")
         startAlarmService(context, intent)
     }
 
     private fun startAlarmService(context: Context?, intent: Intent?) {
-        Log.i(TAG, "Starting alarm Service")
         val intentService = Intent(context, AlarmService::class.java)
         intentService.putExtra(TITLE, intent?.getStringExtra(TITLE))
         intentService.putExtra(SOUND, intent?.getIntExtra(SOUND,0))

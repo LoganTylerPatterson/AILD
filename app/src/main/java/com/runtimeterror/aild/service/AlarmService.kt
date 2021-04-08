@@ -39,7 +39,6 @@ class AlarmService: Service() {
          * Here the service is started, in our case, we play a sound, vibrate the phone, and
          * send a notification to the screen
          */
-        Log.e(TAG, "In onStartCommand")
         val alarmSound = intent?.getIntExtra(SOUND, R.raw.bubble)
         if(alarmSound == R.raw.bubble){
             Log.e(TAG, "alarmSound was not passed in")
@@ -56,7 +55,7 @@ class AlarmService: Service() {
             .setSmallIcon(R.drawable.icon_alarm_small)
             .setContentIntent(pendingIntent)
             .setSound(null)
-            .setAutoCancel(true) //Automatically removes the notification when the user taps it
+            .setAutoCancel(true)
             .build()
 
         mediaPlayer.start()

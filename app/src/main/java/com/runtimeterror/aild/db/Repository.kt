@@ -2,28 +2,31 @@ package com.runtimeterror.aild.db
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
-import androidx.room.CoroutinesRoom
 import androidx.room.Room
-import com.runtimeterror.aild.db.AlarmDatabase
 import com.runtimeterror.aild.db.entities.Alarm
+import com.runtimeterror.aild.db.entities.Journal
 import kotlinx.coroutines.*
 import java.lang.IllegalStateException
 import java.util.*
-import kotlin.coroutines.CoroutineContext
 
+//This was effed up, it really should just be named database
 private const val DATABASE_ALARM = "alarm-database"
 
 class Repository private constructor(context: Context) {
 
-    private val alarmDatabase: AlarmDatabase = Room.databaseBuilder(
+    private val database: Database = Room.databaseBuilder(
             context.applicationContext,
-            AlarmDatabase::class.java,
+            Database::class.java,
             DATABASE_ALARM
     ).build()
 
-    private val alarmDao = alarmDatabase.dao()
+    private val alarmDao = database.alarmDao()
 
+    private val journalDao = database.journalDao()
+
+    /**
+     * ALARM FUNCTIONS
+     */
     fun getAlarms(): LiveData<List<Alarm>> = alarmDao.getAllAlarms()
 
     fun getAlarm(id: Int, scope: CoroutineScope): LiveData<Alarm>?{
@@ -40,6 +43,29 @@ class Repository private constructor(context: Context) {
 
     fun deleteAlarm(alarm: Alarm) = alarmDao.deleteAlarm(alarm)
 
+    /**
+     * JOURNAL FUNCTIONS
+     */
+    fun getJournals(): LiveData<List<Journal>> = journalDao.getAllJournals()
+
+    fun getJournal(id: Int, scope: CoroutineScope): LiveData<Journal>?{
+        var journalLiveData: LiveData<Journal>? = null
+        scope.launch(Dispatchers.IO) {
+            journalLiveData = journalDao.getJournal(id)
+        }
+        return journalLiveData
+    }
+
+    fun insertJournal(journal: Journal) = journalDao.insertJournal(journal)
+
+    fun updateJournal(journal: Journal) = journalDao.updateJournal(journal)
+
+    fun deleteJournal(journal: Journal) = journalDao.deleteJournal(journal)
+
+
+    /**
+     * Instatiates the repository upon app creation
+     */
     companion object {
         private var INSTANCE: Repository? = null
 

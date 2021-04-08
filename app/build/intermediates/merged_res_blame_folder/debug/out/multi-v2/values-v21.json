@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/home/logan/.gradle/caches/transforms-2/files-2.1/86abdb25982e3642906d3c1b3b2f44b5/media-1.0.0/res/values-v21/values-v21.xml",

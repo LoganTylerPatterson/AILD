@@ -1656,8 +1656,11 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add_alarm
+drawable ic_alarm
 drawable ic_alarm_black
 drawable ic_clock_black_24dp
+drawable ic_how_to
+drawable ic_journal
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1751,6 +1754,7 @@ id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
 id action0
+id action_alarms
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1761,7 +1765,9 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_how_to
 id action_image
+id action_journal
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -1791,6 +1797,7 @@ id beginOnFirstDraw
 id beginning
 id blocking
 id bottom
+id bottom_navigation
 id bounce
 id box_finalize_edit
 id buttonPanel
@@ -1803,11 +1810,13 @@ id button_sound
 id cache_measures
 id cancel_action
 id cancel_button
+id cb_lucid
 id center
 id center_horizontal
 id center_vertical
 id chain
 id chains
+id checkBox_auto_dismiss
 id check_delete
 id checkbox
 id checkbox_auto_off
@@ -1864,7 +1873,9 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editTextTextMultiLine
 id edit_query
+id edit_text_adseconds
 id edit_text_alarm_title
 id elastic
 id end
@@ -1872,10 +1883,13 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id et_tags
+id et_title
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab_alarm
+id fab_entry
 id fade
 id fill
 id fill_horizontal
@@ -1893,6 +1907,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id group_dismiss_seconds
 id group_divider
 id grouping
 id groups
@@ -1901,6 +1916,8 @@ id guideline2
 id guideline3
 id guideline4
 id guideline5
+id guideline7
+id guideline9
 id header_title
 id hideable
 id home
@@ -2027,6 +2044,7 @@ id right_side
 id rounded
 id row_index_key
 id rv_alarms
+id rv_entries
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2106,10 +2124,15 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_view_autodismiss
+id text_view_date
 id text_view_dismiss
+id text_view_sound_text
+id text_view_tags
 id text_view_title
 id textinput_counter
 id textinput_error
@@ -2136,6 +2159,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_date
 id unchecked
 id uniform
 id unlabeled
@@ -2233,7 +2257,11 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_alarm
 layout fragment_alarm_list
+layout fragment_create_entry
 layout fragment_delete_alarm
+layout fragment_entry
+layout fragment_entry_list
+layout journal_item_view
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2309,6 +2337,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu bottom_nav
 menu menu_alarm_list
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -2368,6 +2397,7 @@ string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string journal_title
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection

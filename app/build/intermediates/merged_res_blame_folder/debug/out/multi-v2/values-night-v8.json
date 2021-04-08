@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/logan/dev/play_android/AILD/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/logan/dev/play/android/AILD/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/home/logan/.gradle/caches/transforms-2/files-2.1/8e0a164398b7d6dacc7a2fb7142be0c8/appcompat-1.2.0/res/values-night-v8/values-night-v8.xml",
@@ -15,20 +15,20 @@
                     "to": {
                         "startLines": "15,16,17,18,19,20,21,38",
                         "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "814,884,968,1052,1148,1250,1352,3308",
+                        "startOffsets": "783,853,937,1021,1117,1219,1321,3277",
                         "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "879,963,1047,1143,1245,1347,1441,3392"
+                        "endOffsets": "848,932,1016,1112,1214,1316,1410,3361"
                     }
                 },
                 {
-                    "source": "/home/logan/dev/play_android/AILD/app/src/main/res/values-night/themes.xml",
+                    "source": "/home/logan/dev/play/android/AILD/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "100",
                         "endLines": "14",
                         "endColumns": "12",
-                        "endOffsets": "811"
+                        "endOffsets": "780"
                     },
                     "to": {
                         "startLines": "2",
@@ -36,7 +36,7 @@
                         "startOffsets": "100",
                         "endLines": "14",
                         "endColumns": "12",
-                        "endOffsets": "809"
+                        "endOffsets": "778"
                     }
                 },
                 {
@@ -51,9 +51,9 @@
                     "to": {
                         "startLines": "22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,39,40,41,42,43,44,45",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1446,1534,1658,1760,1862,1978,2080,2194,2322,2438,2560,2696,2816,2950,3070,3182,3397,3535,3659,3789,3911,4049,4165",
+                        "startOffsets": "1415,1503,1627,1729,1831,1947,2049,2163,2291,2407,2529,2665,2785,2919,3039,3151,3366,3504,3628,3758,3880,4018,4134",
                         "endColumns": "87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,137,123,129,121,137,115,119",
-                        "endOffsets": "1529,1653,1755,1857,1973,2075,2189,2317,2433,2555,2691,2811,2945,3065,3177,3303,3530,3654,3784,3906,4044,4160,4280"
+                        "endOffsets": "1498,1622,1724,1826,1942,2044,2158,2286,2402,2524,2660,2780,2914,3034,3146,3272,3499,3623,3753,3875,4013,4129,4249"
                     }
                 }
             ]

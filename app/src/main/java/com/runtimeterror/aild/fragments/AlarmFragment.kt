@@ -25,6 +25,7 @@ import com.runtimeterror.aild.db.entities.Alarm
 import com.runtimeterror.aild.recievers.AlarmBroadCastReciever
 import com.runtimeterror.aild.util.TimePickerUtil
 import com.runtimeterror.aild.util.replaceFragment
+import com.runtimeterror.aild.util.setAlarm
 import com.runtimeterror.aild.viewmodels.AlarmViewModel
 import java.util.*
 
@@ -44,7 +45,6 @@ class AlarmFragment : Fragment() {
     private lateinit var spinnerAdapter: ArrayAdapter<CharSequence>
     private var value = ""
 
-    //TODO if auto-dismiss is checked show seconds
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments?.getSerializable(ARG_ALARM_ID) != null) {
@@ -91,11 +91,9 @@ class AlarmFragment : Fragment() {
                 when (parent?.selectedItem) {
                     "BetterDays" -> {
                         alarm.sound = R.raw.betterdays
-                        Log.e(TAG, "BetterDays was selected")
                     }
                     "OnceAgain" -> {
                         alarm.sound = R.raw.onceagain
-                        Log.e(TAG, "OnceAgain was selected")
 
                     }
                     "SlowMotion" -> {
@@ -106,7 +104,6 @@ class AlarmFragment : Fragment() {
                     }
                 }
                 value = parent?.getItemAtPosition(position).toString()
-                Log.e(TAG, "value of value is $value")
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -153,6 +150,40 @@ class AlarmFragment : Fragment() {
 
         }
 
+        /**
+         * If the setAutoDismiss button gets checked, update the alarm
+         * and to display the seconds editText
+         */
+        binding.checkBoxAutoDismiss.setOnClickListener {
+            if(binding.checkBoxAutoDismiss.isChecked){
+                alarm.autoOff = true
+                binding.groupDismissSeconds.visibility = View.VISIBLE
+            } else{
+                alarm.autoOff = false
+                binding.groupDismissSeconds.visibility = View.GONE
+            }
+        }
+
+        /**
+         * The onClickListener to set the duration for an alarm's autodismiss
+         */
+        binding.editTextAdseconds.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+               //Dont do shit
+            }
+
+            override fun onTextChanged(sequence: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //same
+            }
+
+            override fun afterTextChanged(sequence: Editable?) {
+                alarm.autoOffDuration = Integer.parseInt(sequence.toString())
+                Log.e(TAG, "autoOffDuration is ${alarm.autoOffDuration}")
+            }
+
+        })
+
+
 
         /**
          * This sets the alarm and the onClickListener on the done button
@@ -169,7 +200,7 @@ class AlarmFragment : Fragment() {
                 alarm.minute = TimePickerUtil.getTimePickerMinute(binding.timePicker)
                 alarmViewModel.insertAlarm(alarm)
             }
-            setAlarm(alarm)
+            setAlarm(alarm, context)
             replaceFragment(parentFragmentManager, AlarmListFragment())
         }
 
@@ -204,34 +235,6 @@ class AlarmFragment : Fragment() {
             }
         }
         binding.editTextAlarmTitle.addTextChangedListener(titleWatcher)
-    }
-
-    /**
-     * This creates and alarm with alarmManager and uses a pending intent to start the alarm
-     * using the alarm service from the android system
-     */
-    private fun setAlarm(alarm: Alarm) {
-        val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(context, AlarmBroadCastReciever::class.java)
-
-        intent.putExtra(RECURRING, false)
-        intent.putExtra(TITLE, alarm.title)
-        intent.putExtra(SOUND, alarm.sound)
-        intent.putExtra(SECONDS, 5)//TODO need to add autodismiss time
-        intent.putExtra(AUTO_DISMISS, alarm.autoOff)
-
-        val alarmPendingIntent = PendingIntent.getBroadcast(context, alarm.id, intent, 0)
-        val calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR_OF_DAY, alarm.hour)
-        calendar.set(Calendar.MINUTE, alarm.minute)
-        calendar.set(Calendar.SECOND, 0)
-        calendar.set(Calendar.MILLISECOND, 0)
-
-        alarmManager.setExact(
-            AlarmManager.RTC_WAKEUP,
-            calendar.timeInMillis,
-            alarmPendingIntent
-        )
     }
 
     /**

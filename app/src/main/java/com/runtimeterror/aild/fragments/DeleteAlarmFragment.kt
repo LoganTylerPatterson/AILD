@@ -58,8 +58,6 @@ class DeleteAlarmFragment: Fragment() {
                 alarmViewModel.deleteAlarm(item)
             }
             replaceFragment(parentFragmentManager, AlarmListFragment())
-
-            //TODO add remove this id from the list? Maybe a callback?
         }
 
         return view

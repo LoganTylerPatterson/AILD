@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AlarmListFragment">
+    tools:context=".fragments.AlarmListFragment"
+    android:padding="8dp"
+    android:background="#BCBCBC">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_alarms"
@@ -38,8 +40,5 @@
 
 
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,24 +34,59 @@ public final class FragmentAlarmBinding implements ViewBinding {
   public final Spinner buttonSound;
 
   @NonNull
+  public final CheckBox checkBoxAutoDismiss;
+
+  @NonNull
+  public final EditText editTextAdseconds;
+
+  @NonNull
   public final EditText editTextAlarmTitle;
 
   @NonNull
+  public final ConstraintLayout groupDismissSeconds;
+
+  @NonNull
   public final Guideline guideline3;
+
+  @NonNull
+  public final Guideline guideline7;
+
+  @NonNull
+  public final Guideline guideline9;
+
+  @NonNull
+  public final TextView textView4;
+
+  @NonNull
+  public final TextView textViewAutodismiss;
+
+  @NonNull
+  public final TextView textViewSoundText;
 
   @NonNull
   public final TimePicker timePicker;
 
   private FragmentAlarmBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonDone,
       @NonNull Button buttonPlayTest, @NonNull Spinner buttonSound,
-      @NonNull EditText editTextAlarmTitle, @NonNull Guideline guideline3,
-      @NonNull TimePicker timePicker) {
+      @NonNull CheckBox checkBoxAutoDismiss, @NonNull EditText editTextAdseconds,
+      @NonNull EditText editTextAlarmTitle, @NonNull ConstraintLayout groupDismissSeconds,
+      @NonNull Guideline guideline3, @NonNull Guideline guideline7, @NonNull Guideline guideline9,
+      @NonNull TextView textView4, @NonNull TextView textViewAutodismiss,
+      @NonNull TextView textViewSoundText, @NonNull TimePicker timePicker) {
     this.rootView = rootView;
     this.buttonDone = buttonDone;
     this.buttonPlayTest = buttonPlayTest;
     this.buttonSound = buttonSound;
+    this.checkBoxAutoDismiss = checkBoxAutoDismiss;
+    this.editTextAdseconds = editTextAdseconds;
     this.editTextAlarmTitle = editTextAlarmTitle;
+    this.groupDismissSeconds = groupDismissSeconds;
     this.guideline3 = guideline3;
+    this.guideline7 = guideline7;
+    this.guideline9 = guideline9;
+    this.textView4 = textView4;
+    this.textViewAutodismiss = textViewAutodismiss;
+    this.textViewSoundText = textViewSoundText;
     this.timePicker = timePicker;
   }
 
@@ -98,15 +135,63 @@ public final class FragmentAlarmBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkBox_auto_dismiss;
+      CheckBox checkBoxAutoDismiss = rootView.findViewById(id);
+      if (checkBoxAutoDismiss == null) {
+        break missingId;
+      }
+
+      id = R.id.edit_text_adseconds;
+      EditText editTextAdseconds = rootView.findViewById(id);
+      if (editTextAdseconds == null) {
+        break missingId;
+      }
+
       id = R.id.edit_text_alarm_title;
       EditText editTextAlarmTitle = rootView.findViewById(id);
       if (editTextAlarmTitle == null) {
         break missingId;
       }
 
+      id = R.id.group_dismiss_seconds;
+      ConstraintLayout groupDismissSeconds = rootView.findViewById(id);
+      if (groupDismissSeconds == null) {
+        break missingId;
+      }
+
       id = R.id.guideline3;
       Guideline guideline3 = rootView.findViewById(id);
       if (guideline3 == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline7;
+      Guideline guideline7 = rootView.findViewById(id);
+      if (guideline7 == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline9;
+      Guideline guideline9 = rootView.findViewById(id);
+      if (guideline9 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView4;
+      TextView textView4 = rootView.findViewById(id);
+      if (textView4 == null) {
+        break missingId;
+      }
+
+      id = R.id.text_view_autodismiss;
+      TextView textViewAutodismiss = rootView.findViewById(id);
+      if (textViewAutodismiss == null) {
+        break missingId;
+      }
+
+      id = R.id.text_view_sound_text;
+      TextView textViewSoundText = rootView.findViewById(id);
+      if (textViewSoundText == null) {
         break missingId;
       }
 
@@ -117,7 +202,9 @@ public final class FragmentAlarmBinding implements ViewBinding {
       }
 
       return new FragmentAlarmBinding((ConstraintLayout) rootView, buttonDone, buttonPlayTest,
-          buttonSound, editTextAlarmTitle, guideline3, timePicker);
+          buttonSound, checkBoxAutoDismiss, editTextAdseconds, editTextAlarmTitle,
+          groupDismissSeconds, guideline3, guideline7, guideline9, textView4, textViewAutodismiss,
+          textViewSoundText, timePicker);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

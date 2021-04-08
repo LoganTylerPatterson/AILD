@@ -65,8 +65,8 @@ class DeleteAlarmListAdapter(
         holder.autoDismissText.visibility = View.GONE
         holder.deleteCheckbox.visibility = View.VISIBLE
 
-//        holder.itemView.setOnClickListener {
-//            holder.deleteCheckbox.isChecked = true
-//        }
+        holder.deleteCheckbox.setOnClickListener {
+            onItemClicked(alarmList[position])
+        }
     }
 }
